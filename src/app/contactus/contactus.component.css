@@ -1,0 +1,19 @@
+h1{
+    color: green;
+    text-align: center;
+}
+ .container{
+    margin-left: 30%;
+    margin-right: 30%;
+ }
+ .container>div{
+    width: 40%;
+ }
+
+ body{
+    background-image:url("https://media.istockphoto.com/id/515673754/photo/healthy-eating-background-food-photography-different-fruits-and-vegetables.jpg?s=612x612&w=0&k=20&c=Hjwsd7dsUnBHY5VTDqElloPFxDbPJj7iUj7Za-4XMiY=");
+    background-size: 800px ;
+    
+ }
+
+ 

@@ -1,0 +1,66 @@
+
+
+<section class="h-100" style="background-color: #eee;">
+    <div class="container h-100 py-5">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-10">
+  
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="fw-normal mb-0 text-black">{{pageTitle}}</h3>
+       
+          </div>
+          <div class="card rounded-3 mb-4" *ngFor="let p of products">
+            <div class="card-body p-4">
+              <div class="row d-flex justify-content-between align-items-center">
+                <div class="col-md-2 col-lg-2 col-xl-2">
+                  <img
+                    [src]='p.imageUrl'
+                    [style.width.px]="imageWidth"
+                   [style.height.px]="imageHeight"
+                    class="img-fluid rounded-3">
+                </div>
+                <div class="col-md-3 col-lg-3 col-xl-3">
+                  <p class="lead fw-normal mb-2">{{p.name}}</p>
+                  <p></p>
+                </div>
+                <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+
+                    
+                 
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                  <h5 class="mb-0">{{p.price*p.quantity|currency:'INR'}}</h5>
+                </div>
+                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                  <button (click)="deleteItem(p)" class="btn btn-danger btn-floating"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                    <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+                  </svg></button>
+                </div>
+                
+              </div>
+            </div>
+            
+          </div>
+  
+          
+          
+  
+         
+  
+        
+  
+          <div class="card justify-content-center align-items-center">
+            <div class="card-body">
+              <h2 *ngIf="grandTotal">Total:{{grandTotal|currency:'INR'}}</h2>
+              <button type="button" id="paybutton" (click)="onPay()" [disabled]='isCartEmpty' class="btn btn-success btn-block btn-md">Proceed to Pay</button>
+            </div>
+            <div class="card-body">
+                
+                <button class="btn btn-danger btn-block btn-md" id="emptybutton" [disabled]='isCartEmpty'  (click)="emptyCart()">Clear cart</button>
+              </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section>

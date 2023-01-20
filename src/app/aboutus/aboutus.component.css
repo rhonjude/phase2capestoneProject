@@ -1,0 +1,38 @@
+h1{
+text-align: center;
+color: green;
+}
+.float-parent-element{
+    display: flex;
+
+
+}
+
+.yellow{
+    padding: 50px; 
+    color: black;
+    text-align: center;
+    text-align: center;
+
+
+}
+
+.red { 
+    margin-left: 50%;
+    padding-bottom: 20%;
+    text-align: right;
+    color: green;
+    font-size: 3rem;
+    font-weight: bold;
+}
+span {
+    float: left;
+    width: 0.7em;
+    font-size: 400%;
+    font-family: algerian, courier;
+    line-height: 80%;
+  }
+
+  img{
+    height: 600px;
+  }

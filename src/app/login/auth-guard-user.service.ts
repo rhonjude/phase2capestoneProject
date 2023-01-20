@@ -1,0 +1,33 @@
+import { Injectable } from "@angular/core";
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from "@angular/router";
+import { AuthService } from "./auth.service";
+
+@Injectable({
+    providedIn:'root'
+})
+export class AuthGuardUser implements CanActivate{
+
+    constructor(private authService:AuthService,private router:Router){}
+
+    canActivate(route:ActivatedRouteSnapshot,state:RouterStateSnapshot):boolean{
+        return this.checkLoggedIn(state.url);
+    }
+
+    checkLoggedIn(url:string):boolean{
+        //first you try line number 18 ,as  a regular user , no need to check if admin
+        //if(this.authService.isLoggedIn()){
+            //later you try for admin routes
+            //this route will be active only for admin users
+            //create one admin user and use it
+    
+    
+        if(this.authService.isUser()){
+         console.log('Auth guard check for user role')
+        return true;
+        }
+    
+        this.authService.redirectToUrl=url;
+        this.router.navigate(['/login']);
+        return false;
+     }
+}

@@ -1,0 +1,10 @@
+.main{
+    display: flex;
+}
+.tableclass{
+    flex:50%;
+}
+.formclass{
+    flex: 50%;
+}
+
